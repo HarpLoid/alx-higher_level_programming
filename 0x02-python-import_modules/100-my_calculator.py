@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     if num_of_args < 3 or num_of_args > 3:
         print("Usage: {} <a> <operator> <b>".format(argv[0]))
-        exit (1)
+        exit(1)
 
     operator_list = ['+', '-', '*', '/']
     a = int(argv[1])
@@ -25,4 +25,4 @@ if __name__ == "__main__":
         print("{:d} {} {:d} = {:d}".format(a, operator_list[3], b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
-        exit (1)
+        exit(1)
