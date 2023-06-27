@@ -8,8 +8,9 @@ prints the square using '#' also add the position
 of the square
 """
 
+
 class Square:
-    """ 
+    """
     class Square
 
     Args:
@@ -24,7 +25,7 @@ class Square:
         area(self)
         my_print(self)
     """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initializes square
 
@@ -71,13 +72,13 @@ class Square:
     def position(self, value):
         """
         Setter
-        
+
         sets the __position attribute
         """
-        if not isinstance(value, tuple) or\
-            len(value) != 2 or not isinstance(value[0], int)\
-            or not isinstance(value[1], int) or value[0] < 0\
-            or value[1] < 0:
+        if not isinstance(value, tuple) or len(value) != 2\
+                or not isinstance(value[0], int)\
+                or not isinstance(value[1], int) or value[0] < 0\
+                or value[1] < 0:
             raise TypeError("position must be a tuple of \
                         2 positive integers")
         else:

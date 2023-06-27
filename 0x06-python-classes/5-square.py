@@ -7,8 +7,9 @@ for size.
 prints the square using '#'
 """
 
+
 class Square:
-    """ 
+    """
     class Square
 
     Args:

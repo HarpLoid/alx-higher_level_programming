@@ -6,8 +6,9 @@ public method area, getter and setter properties
 for size.
 """
 
+
 class Square:
-    """ 
+    """
     class Square
 
     Args:

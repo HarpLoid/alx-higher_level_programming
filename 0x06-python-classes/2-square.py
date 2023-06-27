@@ -4,8 +4,9 @@ Module 2-square
 Defines class Square with private attribute size
 """
 
+
 class Square:
-    """ 
+    """
     class Square
 
     Args:
