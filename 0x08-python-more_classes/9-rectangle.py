@@ -122,7 +122,7 @@ class Rectangle:
          to be able to recreate a new instance
         """
         return "{}({}, {})".format(self.__class__.__name__,
-                                    self.__width, self.__height)
+                                   self.__width, self.__height)
 
     def __del__(self):
         """
