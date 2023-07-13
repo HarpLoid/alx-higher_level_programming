@@ -13,10 +13,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Initialize """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -85,3 +85,28 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """
+        calculates the area of the rectangle.
+        """
+        return self.__width * self.__height
+
+    def display(self):
+        """
+        prints to stdout the Rectangle instance
+        with character '#'
+        """
+        print('\n' * self.__y, end="")
+        print('\n'.join([" " * self.__x +
+                         "#" * self.__width
+                         for rows in range(self.__height)]))
+
+    def __str__(self):
+        """
+        prints the string representation of
+        the class
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                            self.id, self.__x, self.__y,
+                                            self.__width, self.__height)
