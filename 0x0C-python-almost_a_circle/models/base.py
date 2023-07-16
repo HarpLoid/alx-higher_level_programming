@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Module - base
- Base class
+
+Base class
  """
 import json
 
@@ -30,6 +31,17 @@ class Base():
 
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        returns the list of the 
+        JSON string representation json_string
+        """
+        if json_string is None:
+            json_string = []
+
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -43,3 +55,31 @@ class Base():
         filename = cls.__name__ + ".json"
         with open(filename, 'w', encoding='utf8') as f:
             f.write(cls.to_json_string(obj_list))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1,1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        returns a list of instances
+        """
+        file = cls.__name__ + ".json"
+        instance_list = []
+        try:
+            with open(file, 'r') as f:
+                instances = cls.from_json_string(f.read())
+            for i, d in enumerate(instances):
+                instance_list.append(cls.create(**instances[i]))
+        except:
+            pass
+        return instance_list
