@@ -42,9 +42,9 @@ class Square(Rectangle):
                 elif key == 1:
                     self.size = value
                 elif key == 2:
-                    self.__x = value
+                    self.x = value
                 else:
-                    self.__y = value
+                    self.y = value
         else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
@@ -64,4 +64,4 @@ class Square(Rectangle):
         dictionary["size"] = self.size
         dictionary["x"] = self.x
         dictionary["y"] = self.y
-        return  dictionary
+        return dictionary

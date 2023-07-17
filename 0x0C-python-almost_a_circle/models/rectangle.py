@@ -108,8 +108,8 @@ class Rectangle(Base):
         the class
         """
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
-                                            self.id, self.__x, self.__y,
-                                            self.__width, self.__height)
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
@@ -124,9 +124,9 @@ class Rectangle(Base):
                 elif key == 2:
                     self.__height = value
                 elif key == 3:
-                    self.__x = value
+                    self.x = value
                 else:
-                    self.__y = value
+                    self.y = value
         else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
@@ -140,10 +140,10 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        dictionary  = {}
+        dictionary = {}
         dictionary["id"] = self.id
         dictionary["width"] = self.width
         dictionary["height"] = self.height
         dictionary["x"] = self.x
         dictionary["y"] = self.y
-        return  dictionary
+        return dictionary
