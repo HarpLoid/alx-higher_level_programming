@@ -24,17 +24,15 @@ if __name__ == "__main__":
 
     cursor.execute(
         """SELECT cities.name
+        FROM cities
+        WHERE cities.state_id = (SELECT states.id
         FROM states
-        INNER JOIN cities ON states.id = cities.state_id
-        WHERE states.name LIKE %s
+        WHERE states.name = %s)
         ORDER BY cities.id ASC""", (user_input,)
     )
 
     query_result = cursor.fetchall()
-    for result in query_result:
-        print("%s" % result, end="")
-        print(", ", end="")
-    print("\n")
+    print(', '.join(["{:s}".format(result[0]) for result in query_result]))
 
     cursor.close()
     connection.close()
