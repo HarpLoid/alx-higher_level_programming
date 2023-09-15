@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Prints all City objects from the database hbtn_0e_14_usa
+"""
 
 from sys import argv
 from model_state import State
