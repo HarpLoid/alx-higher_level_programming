@@ -24,10 +24,9 @@ if __name__ == "__main__":
 
     cursor.execute(
         """SELECT cities.name
-        FROM cities
-        WHERE cities.state_id = (SELECT states.id
         FROM states
-        WHERE states.name = %s)
+        INNER JOIN cities ON states.id = cities.state_id
+        WHERE states.name LIKE %s
         ORDER BY cities.id ASC""", (user_input,)
     )
 
