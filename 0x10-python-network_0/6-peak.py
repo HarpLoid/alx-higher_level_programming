@@ -15,12 +15,12 @@ def find_peak(list_of_integers):
 
     l_int = list_of_integers
     size = len(l_int)
-    
+
     if size == 1:
         return l_int[0]
     if size == 2:
         return max(l_int)
-    
+
     mid = size//2
     mark = l_int[mid]
     if mark > l_int[mid - 1] and mark > l_int[mid + 1]:
