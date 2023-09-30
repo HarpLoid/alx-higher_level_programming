@@ -8,7 +8,7 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    url = 'http://736def419d41.6e431165.alx-cod.online:5000/search_user'
+    url = 'http://0.0.0.0:5000/search_user'
     if len(argv) > 1:
         q = argv[1]
     else:
