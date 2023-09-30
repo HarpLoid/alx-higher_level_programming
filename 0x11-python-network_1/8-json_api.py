@@ -18,10 +18,9 @@ if __name__ == '__main__':
     resp = requests.post(url, data=values)
     try:
         val_json = resp.json()
-        print(val_json)
         if val_json:
             print(f"[{val_json['id']}] {val_json['name']}")
         else:
             print("No result")
-    except requests.exceptions.JSONDecodeError:
+    except requests.exceptions.InvalidJSONError:
         print("Not a valid JSON")
