@@ -22,5 +22,5 @@ if __name__ == '__main__':
             print(f"[{val_json['id']}] {val_json['name']}")
         else:
             print("No result")
-    except requests.exceptions.InvalidJSONError:
+    except Exception:
         print("Not a valid JSON")
